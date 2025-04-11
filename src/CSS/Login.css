@@ -1,0 +1,218 @@
+/* Common Styles for both Home and Login Page */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  background: url('../../public/blockchain1.webp') no-repeat center center, 
+              linear-gradient(to bottom, #0a0f24, #112262);
+  align-items: center;
+  color: white;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../public/blockchain1.webp') no-repeat center center;
+  filter: brightness(1) drop-shadow(0 0 0px rgba(0, 255, 255, 0.8));
+  z-index: -1;
+  opacity: 0.3; /* Reduced opacity */
+  pointer-events: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  top: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.login-content {
+  text-align: center;
+  z-index: 1;
+}
+
+.login-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin: 15px 0;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+}
+
+.cta-button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #222;
+}
+
+/* Error Styling */
+.form-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Animation for Background Blockchain Boxes */
+.blockchain-box {
+  position: absolute;
+  width: 80px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(79, 130, 255, 0.5);
+  animation: moveBox 15s linear infinite, rotateBox 12s linear infinite;
+}
+
+@keyframes moveBox {
+  0% {
+      transform: translateX(-50%) translateY(-50%) scale(0.5);
+  }
+  25% {
+      transform: translateX(100vw) translateY(100vh) scale(1);
+  }
+  50% {
+      transform: translateX(150vw) translateY(50vh) scale(0.8);
+  }
+  75% {
+      transform: translateX(0vw) translateY(0vh) scale(1.2);
+  }
+  100% {
+      transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+}
+
+@keyframes rotateBox {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* Mouse Follow Circle */
+.mouse-light {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .login-container {
+      background-size: cover;
+      padding: 20px;
+  }
+
+  .login-content h1 {
+      font-size: 28px;
+  }
+
+  input {
+      width: 250px;
+  }
+
+  .cta-button {
+      padding: 12px 25px;
+      font-size: 14px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-content h1 {
+      font-size: 24px;
+  }
+
+  input {
+      width: 200px;
+      font-size: 14px;
+  }
+
+  .cta-button {
+      padding: 10px 20px;
+      font-size: 12px;
+  }
+
+  .navbar {
+      width: 100%;
+      text-align: center;
+      top: 10px;
+  }
+
+  .nav-btn {
+      padding: 8px 15px;
+      font-size: 12px;
+  }
+}

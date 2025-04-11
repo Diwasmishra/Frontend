@@ -1,0 +1,16 @@
+#verify-doc-head{
+    font-size: 3rem;
+}
+#doc-inp{
+    height: 50px;
+    padding: 2rem;
+}
+#verify-btn{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-right:1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 5px;
+    border: none;
+}

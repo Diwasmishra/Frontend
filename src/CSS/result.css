@@ -1,0 +1,12 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    background: url('../../public/blockchain1.webp') no-repeat center center, 
+                linear-gradient(to bottom, #3b4050, #142457);
+    align-items: center;
+    color: white;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }

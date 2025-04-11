@@ -1,0 +1,40 @@
+.scroll-container {
+    width: 100%;
+    max-width: 500px; /* Adjust as per requirement */
+    height: 400px; /* Set a fixed height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 20px;
+    
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+
+}
+
+/* Glowing hover effect */
+.scroll-container:hover {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+/* Custom scrollbar for better UI */
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hr{
+    border-color: #747576;
+    
+}
