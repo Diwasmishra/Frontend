@@ -42,7 +42,7 @@ function Login() {
       return;
     }
 
-    if (username === "Admin" && password === "112233") {
+    if (username === "Admin" && password === "Bchain@123") {
       setLoginStatus('Login successful');
 
       // Set the session for logged-in user
