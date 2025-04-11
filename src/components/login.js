@@ -42,26 +42,16 @@ function Login() {
       return;
     }
 
-    try {
-      const response = await fetch(`${SERVER_URL}/myapp/login/`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }), 
-      });
+    if (username === "Admin" && password === "112233") {
+      setLoginStatus('Login successful');
 
-      const data = await response.json();
+      // Set the session for logged-in user
+      setSession({ username });
 
-      if (response.status === 200) {
-        setLoginStatus('Login successful');
-        setSession({ username: data.username });
-        navigate('/upload');
-      } else {
-        setLoginStatus('Login failed. Please check your username and password.');
-      }
-    } catch (error) {
-      setLoginStatus('Error occurred. Please try again later.');
+      // Redirect to the upload page
+      navigate('/upload');
+    } else {
+      setLoginStatus('Login failed. Invalid username or password.');
     }
   };
 
